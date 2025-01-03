@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import flow
+from .models import Flow
 
-admin.site.register(flow)
+admin.site.register(Flow)

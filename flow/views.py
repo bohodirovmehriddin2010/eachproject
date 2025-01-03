@@ -1,6 +1,19 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from .models import Flow
 
 
-class flow(TemplateView):
-    template_name = 'index.html'
+def home(request):
+    flow = Flow.objects.all()
+    context = {
+        'flow': flow
+    }
+    return render(request, 'index.html', context)
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def service(request):
+    return render(request, 'service.html')
